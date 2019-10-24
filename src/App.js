@@ -1,25 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 
-function App() {
+import {useRoutes, navigate } from 'hookrouter';
+
+import ViewOpening from './screen/ViewOpening';
+import ViewListTabungan from './screen/ViewListTabungan';
+import NotFoundPage from './screen/NotFoundPage';
+
+
+
+const App = () => {
+
+  const routes = {
+    
+    '/': () => <ViewOpening />,
+    '/list-products' : () => <ViewListTabungan />
+    // '/about': () => <AboutPage />,
+    // '/products': () => <ProductOverview />,
+    // '/products/:id': ({id}) => <ProductDetails id={id} />
+  };
+  
+  const routeResult = useRoutes(routes);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    routeResult || <NotFoundPage />
+    
   );
 }
 
