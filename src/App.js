@@ -6,6 +6,14 @@ import {useRoutes, navigate } from 'hookrouter';
 
 import ViewOpening from './screen/ViewOpening';
 import ViewListTabungan from './screen/ViewListTabungan';
+import ViewQuestionOne from './screen/ViewQuestionOne';
+import ViewQuestionScenarioJemput from './screen/ViewQuestionScenarioJemput';
+import ViewScenarioSettingMapGojek from './screen/ViewScenarioSettingMapGojek';
+import ViewLoadingGojek from './screen/ViewLoadingGojek';
+
+
+
+
 import NotFoundPage from './screen/NotFoundPage';
 
 
@@ -15,10 +23,13 @@ const App = () => {
   const routes = {
     
     '/': () => <ViewOpening />,
-    '/list-products' : () => <ViewListTabungan />
-    // '/about': () => <AboutPage />,
-    // '/products': () => <ProductOverview />,
-    // '/products/:id': ({id}) => <ProductDetails id={id} />
+    '/list-products' : () => <ViewListTabungan />,
+    '/question-one': () => <ViewQuestionOne />,
+    '/question-scenario-jemput-gojek': () => <ViewQuestionScenarioJemput />,
+    '/map-gojek': () => <ViewScenarioSettingMapGojek />,
+    '/loading-gojek': () => <ViewLoadingGojek />
+
+    
   };
   
   const routeResult = useRoutes(routes);

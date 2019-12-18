@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import {Container, Grid, Button, Card, CardContent, CardMedia, Typography, IconButton} from '@material-ui/core';
+import {Container, Grid, Button, Card, CardContent, CardMedia, Typography, IconButton,Checkbox, List, Badge, AppBar, Toolbar} from '@material-ui/core';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 import DoneIcon from '@material-ui/icons/Done';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SendIcon from '@material-ui/icons/Send';
+
+import {navigate } from 'hookrouter';
 
 import { typography } from './Style/Typography';
 
 import PictBoncos from '../assets/sampah_boncos.jpeg';
 import PictBotolBening from '../assets/sampah_botol_bening.jpeg';
 import PictGabruk from '../assets/sampah_gabruk.jpeg';
+
+
 
 const useTypography = makeStyles(typography);
 
@@ -47,13 +53,35 @@ const useStyles = makeStyles(theme => ({
     height: 38,
     width: 38,
   },
+
+  /*
+    ``````````````````````
+    colorSecondary APP BAR
+
+    ``````````````````````
+  */
+  colorSecondary: {
+    // color: theme.palette.primary,
+    backgroundColor:'white'
+  },
+
+  /*
+    `````
+    BADGE
+
+    `````
+  */
+  colorPrimary: {
+    // color: 'green'
+    backgroundColor: 'green'
+  } 
 }));
 
 const ViewListTabungan = () => {
 
   const classes = useStyles();
   const typo = useTypography();
-  const theme = useTheme();
+  // const theme = useTheme();
 
 
   /*
@@ -81,17 +109,30 @@ const ViewListTabungan = () => {
       ----------------------
 
   */
+
+  const [jumlahTerpilihState, setJumlahTerpilihState ] = useState([]);  
+
+
+  let jumlahTerpilih = []
+     
+  let newSelected = [];
+  
   const handleClick = (e, data) => {
 
+    console.log("Data : ", data );
+
+    // jumlahTerpilih.push(data);
+    // setJumlahTerpilihState([...jumlahTerpilih])
+    // console.log("jumlahTerpilih : ", jumlahTerpilih)
+    // console.log("jumlahTerpilih : ", jumlahTerpilih.length)
     e.preventDefault();
 
     const selectedIndex = list.indexOf(data.id);
 
-    let newSelected = [];
-
     if (selectedIndex === -1) {
 
       newSelected = newSelected.concat(list, data.id);
+
 
     } else if (selectedIndex === 0) {
 
@@ -105,35 +146,70 @@ const ViewListTabungan = () => {
 
       newSelected = newSelected.concat(
 
-        list.slice(0, selectedIndex),
+        // list.slice(0, selectedIndex),
         list.slice(selectedIndex + 1),
       );
     };
-
-    console.log("newSelected : ", newSelected);
-
-    // const listWithbject = newSelected.map((item, i) => {
-    //   console.log("Item : ", item)
-
-    //   if(item.hasOwnProperty('id')){
-      
-        
-    //       return item;  
-        
-
-    //   };
-    // })
-
-    // console.log("listWithbject : ", listWithbject);
+    console.log("NewSleelcted : ", newSelected);
 
     setList(newSelected);
+
   };
+
+  console.log("List : ", list)
 
   const isSelected = id => list.indexOf(id) !== -1;
  
   return (
 
       <Container>
+
+              <AppBar
+                position="fixed"
+                color='secondary'
+                classes={{
+                  colorSecondary: classes.colorSecondary
+                }}
+              
+            >
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <Badge 
+                className={classes.margin} 
+                badgeContent={jumlahTerpilihState.length} 
+                color="primary"
+                classes={{
+                  colorPrimary: classes.colorPrimary
+                }}
+                >
+                <ShoppingCartIcon color='secondary' />
+              </Badge>
+
+            </IconButton>
+            <Grid container spacing={8} alignItems="flex-end"></Grid>
+            <Button 
+              size='small'
+              onClick={() => navigate('/question-one')}
+              color="secondary"
+              endIcon={
+                <SendIcon />
+              }
+              >
+                <Typography 
+
+                  variant="subtitle1" 
+                  className={typo.title}
+                >
+                  Lanjut
+                </Typography>
+            </Button>
+          </Toolbar>
+        </AppBar>
+
+        <br />
+        <br />
+        <br />
+
 
           {
             list.length > 0  &&  list.map((item, i) => {
@@ -142,8 +218,8 @@ const ViewListTabungan = () => {
 
               
               return (
-                
                 <Grid container direction='row' justify='center' alignItems='center' key={i}>
+                
                 <Card className={classes.card} >
                   <div className={classes.details}>
                     <CardContent className={classes.content}>
@@ -155,6 +231,8 @@ const ViewListTabungan = () => {
                       </Typography>
                     </CardContent>
                     <div className={classes.controls}>
+
+                      
                      
                       <Button 
                         onClick={(e) => handleClick(e, item)}
@@ -166,6 +244,9 @@ const ViewListTabungan = () => {
                         Tabung ini
 
                       </Button>
+                         
+                     
+                      
                     </div>
                   </div>
                   <CardMedia
