@@ -10,8 +10,7 @@ import ViewQuestionOne from './screen/ViewQuestionOne';
 import ViewQuestionScenarioJemput from './screen/ViewQuestionScenarioJemput';
 import ViewScenarioSettingMapGojek from './screen/ViewScenarioSettingMapGojek';
 import ViewLoadingGojek from './screen/ViewLoadingGojek';
-
-
+import ViewCongratulation from './screen/ViewCongratulation';
 
 
 import NotFoundPage from './screen/NotFoundPage';
@@ -27,7 +26,8 @@ const App = () => {
     '/question-one': () => <ViewQuestionOne />,
     '/question-scenario-jemput-gojek': () => <ViewQuestionScenarioJemput />,
     '/map-gojek': () => <ViewScenarioSettingMapGojek />,
-    '/loading-gojek': () => <ViewLoadingGojek />
+    '/loading-gojek': () => <ViewLoadingGojek />,
+    '/congratulation' : () => <ViewCongratulation />
 
     
   };

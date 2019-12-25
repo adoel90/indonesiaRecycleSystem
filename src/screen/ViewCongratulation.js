@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import {Container, Grid, Button, Card, CardContent, CardMedia, Typography, IconButton,Checkbox, List, Badge, AppBar, Toolbar} from '@material-ui/core';
-
+import {Container, Grid, Button, Card, CardContent, CardMedia, Typography, IconButton,Checkbox, List, Badge, AppBar, Toolbar, Avatar, Box} from '@material-ui/core';
+import { deepOrange, green, lightGreen } from '@material-ui/core/colors';
 import { navigate } from 'hookrouter';
 
 import { typography } from './Style/Typography';
@@ -15,6 +15,13 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       margin: theme.spacing(1)
     },
+
+    cardCongrat: {
+        minWidth: 275,
+        width: 275,
+        backgroundColor: green[500]
+
+      },
     details: {
       display: 'flex',
       flexDirection: 'column',
@@ -77,39 +84,52 @@ const useStyles = makeStyles(theme => ({
     primary: {
 
         backgroundColor: '#f50057'
-    }
+    },
+
+    /*
+      `````
+      AVATAR
+  
+      `````
+    */
+    rounded: {
+        color: '#fff',
+        backgroundColor: green[500],
+    },
   }));
 
-const ViewQuestionOne = props => {
+
+const ViewCongratulation = props => {
 
     const classes = useStyles();
     const typo = useTypography();
 
     return (
-        <Grid container>
-            <Grid item xs={12} md={12} style={{textAlign: 'center'}}>
+        <Grid container>  
+            <Grid container direction='row' justify='center' alignItems='center'>
+                <Box marginTop={24} marginBottom={2}>
+                    <Card className={classes.cardCongrat} variant="outlined" >
+                        <CardContent style={{textAlign:'center'}}>
+                            <Typography variant='h3' className={typo.title} style={{color: 'white'}}>
+                                5 Kg
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Box>
+            </Grid>
 
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <Typography variant='subtitle2' className={typo.title}>
-                    Mau di jemput Abang Gojek ?
+            
+
+            <Grid item xs={12} md={12} style={{textAlign: 'center'}}>
+               
+                <Typography variant='subtitle1' className={typo.title}>
+                    <i>Selamat tabungan kamu telah berhasil di tambah :)</i>
                 </Typography>
 
                 <br />
-                <br />
-                <Button size='small'  variant='outlined' className={typo.title}>
-                    Tidak
-                </Button>
-                &nbsp;
                 <Button 
                     size='small'
-                    onClick={() => navigate('/question-scenario-jemput-gojek')}
+                    // onClick={() => navigate('/question-scenario-jemput-gojek')}
                     variant='contained' 
                     color='primary'
                     classes={{
@@ -119,13 +139,13 @@ const ViewQuestionOne = props => {
                     className={typo.title}
                     
                 >
-                    Ya
+                    Lihat &nbsp; <i>detail</i>
                 </Button>
+
             </Grid>
         </Grid>
     )
-
-
 };
 
-export default ViewQuestionOne;
+
+export default ViewCongratulation;

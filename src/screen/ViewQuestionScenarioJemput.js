@@ -87,7 +87,7 @@ const ViewQuestionScenarioJemput = props => {
 
     return (
         <Grid container>
-            <Grid item md={12} style={{textAlign: 'center'}}>
+            <Grid item xs={12} md={12} style={{textAlign: 'center'}}>
 
                 <br />
                 <br />
@@ -97,7 +97,7 @@ const ViewQuestionScenarioJemput = props => {
                 <br />
                 <br />
                 <br />
-                <Typography variant='subtitle6' className={typo.title}>
+                <Typography variant='subtitle2' className={typo.title}>
                     Jam berapa di jemput ?
                 </Typography>
 

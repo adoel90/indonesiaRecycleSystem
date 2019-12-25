@@ -64,6 +64,15 @@ const ViewLoadingGojek = props => {
 
     const { classes, match } = props;
 
+    useEffect(() => {
+
+        setTimeout(() => {
+
+            navigate('/congratulation')
+        },40000)
+
+    },[])
+
     return (
         <Container>
             <Grid container direction='row' justify='center' alignItems='center'>
@@ -84,7 +93,14 @@ const ViewLoadingGojek = props => {
                         </div>
                         <div>
                             <Typography variant='subtitle2' className={classes.title}>
-                                <b>Abang Gojek mengantarkan tabungan kamu ke <i>Bank Sampah Rawajati</i>...</b>
+                                <b>Abang Gojek sedang mengantarkan tabungan kamu<br />
+                                ke <i>Bank Sampah Rawajati</i>...</b>
+                            </Typography>
+                        </div>
+                        <div>
+                            <Typography variant='subtitle2' className={classes.title}>
+                                <b><i>Bank Sampah Rawajati</i> sedang menimbang <br />
+                                tabungan kamu...</b>
                             </Typography>
                         </div>
                     </TextLoop>
@@ -92,6 +108,8 @@ const ViewLoadingGojek = props => {
                     <Box mt={theme.spacing(1)} marginLeft={theme.spacing(2.4)}>
                         <CircularProgress color='secondary' size={24} />
                     </Box>
+
+                
                 </Box>
             
                
