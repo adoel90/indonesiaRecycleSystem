@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/indonesiaRecycleSystem/static/js/main.2afc33dd.chunk.js",
+    "main.js.map": "/indonesiaRecycleSystem/static/js/main.2afc33dd.chunk.js.map",
+    "runtime-main.js": "/indonesiaRecycleSystem/static/js/runtime-main.7f9793f0.js",
+    "runtime-main.js.map": "/indonesiaRecycleSystem/static/js/runtime-main.7f9793f0.js.map",
+    "static/css/2.1e488c1e.chunk.css": "/indonesiaRecycleSystem/static/css/2.1e488c1e.chunk.css",
+    "static/js/2.86ec17cb.chunk.js": "/indonesiaRecycleSystem/static/js/2.86ec17cb.chunk.js",
+    "static/js/2.86ec17cb.chunk.js.map": "/indonesiaRecycleSystem/static/js/2.86ec17cb.chunk.js.map",
+    "index.html": "/indonesiaRecycleSystem/index.html",
+    "precache-manifest.451643257b16a329f5fca7daa6e75192.js": "/indonesiaRecycleSystem/precache-manifest.451643257b16a329f5fca7daa6e75192.js",
+    "service-worker.js": "/indonesiaRecycleSystem/service-worker.js",
+    "static/css/2.1e488c1e.chunk.css.map": "/indonesiaRecycleSystem/static/css/2.1e488c1e.chunk.css.map",
+    "static/media/logo.svg": "/indonesiaRecycleSystem/static/media/logo.25bf045c.svg",
+    "static/media/map_gojek2.jpg": "/indonesiaRecycleSystem/static/media/map_gojek2.7c43bd22.jpg",
+    "static/media/index.css": "/indonesiaRecycleSystem/static/media/open-sans-latin-800italic.c62c3eea.woff2",
+    "static/media/sampah_boncos.jpeg": "/indonesiaRecycleSystem/static/media/sampah_boncos.4f3e4f58.jpeg",
+    "static/media/sampah_botol_bening.jpeg": "/indonesiaRecycleSystem/static/media/sampah_botol_bening.dc74916d.jpeg",
+    "static/media/sampah_gabruk.jpeg": "/indonesiaRecycleSystem/static/media/sampah_gabruk.8010bafa.jpeg"
+  }
+}
