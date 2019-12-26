@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.4.3",
+    "gh-pages": "^2.1.1",
     "hookrouter": "^1.2.3",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
@@ -14,11 +15,14 @@
     "react-text-loop": "^2.3.0",
     "typeface-open-sans": "^0.0.75"
   },
+  "homepage": "http://adoel90.github.io/indonesiaRecycleSystem",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
