@@ -1,5 +1,6 @@
 {
   "name": "prototype-app",
+  "homepage": "https://adoel90.github.io/indonesiaRecycleSystem",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +16,6 @@
     "react-text-loop": "^2.3.0",
     "typeface-open-sans": "^0.0.75"
   },
-  "homepage": "https://adoel90.github.io/indonesiaRecycleSystem",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
